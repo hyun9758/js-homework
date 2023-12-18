@@ -12,9 +12,15 @@ const nav = document.querySelector(".nav");
 
 function handleClick(e) {
   const target = e.target;
-
   const li = target.closest("li");
 
   if (!li) return;
+
+  const index = li.dataset.index;
+
+  document.body.style.background = `linear-gradient(to bottom, ${
+    data[index].color[0]
+  }, ${data[index - 1].color[0]}, ${data[index - 1].color[1]})`;
 }
+
 nav.addEventListener("click", handleClick);
