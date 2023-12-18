@@ -20,7 +20,12 @@ function handleClick(e) {
 
   document.body.style.background = `linear-gradient(to bottom, ${
     data[index].color[0]
-  }, ${data[index - 1].color[0]}, ${data[index - 1].color[1]})`;
+  }, ${data[index - 1].color[1]})`;
+
+  visual.src = `./assets/${data[index].name.toLowerCase()}.jpeg`;
+  visual.alt = data[index].alt;
+
+  nickName.textContent = data[index].name;
 }
 
 nav.addEventListener("click", handleClick);
